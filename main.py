@@ -180,8 +180,6 @@ def main():
 
     def background():
         nonlocal x_bg
-        if points >= 100:
-            SCREEN.fill("#000000")
         width = BG.get_width()
         SCREEN.blit(BG, (x_bg, y_bg))
         SCREEN.blit(BG, (x_bg + width, y_bg))
@@ -194,8 +192,9 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 return False
-
-        SCREEN.fill((255, 255, 255))
+        if points >= 500:
+            SCREEN.fill("#00000000")
+            SCREEN.fill(("#ffffff"))
         keys = pygame.key.get_pressed()
 
         player.update(keys)
