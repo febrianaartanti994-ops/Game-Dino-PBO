@@ -91,7 +91,7 @@ class Dinosaur:
     def jump(self):
         self.image = JUMPING
         self.rect.y -= self.jump_vel * 4
-        self.jump_vel -= 0.8
+        self.jump_vel -= 0.9
         if self.jump_vel < -self.JUMP_VEL:
             self.jumping = False
             self.jump_vel = self.JUMP_VEL
@@ -172,7 +172,7 @@ def main():
         points = (current_time - start_time) // 100
         milestone = points // 100
         if milestone > last_point_sound:
-            game_speed += 3
+            game_speed += 5
             POINT_SOUND.play()
             last_point_sound = milestone
         text = font.render(f"Points: {points}", True, (0, 0, 0))
@@ -180,6 +180,8 @@ def main():
 
     def background():
         nonlocal x_bg
+        if points >= 100:
+            SCREEN.fill("#000000")
         width = BG.get_width()
         SCREEN.blit(BG, (x_bg, y_bg))
         SCREEN.blit(BG, (x_bg + width, y_bg))
