@@ -7,8 +7,7 @@ pygame.init()
 SCREEN_WIDTH = 1100
 SCREEN_HEIGHT = 600
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Dino Game Clean")
-
+pygame.display.set_caption("Dino Game")
 BASE_DIR = os.path.dirname(__file__)
 
 def load(path):
