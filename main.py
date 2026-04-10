@@ -193,8 +193,9 @@ def main():
                 pygame.quit()
                 return False
         if points >= 500:
-            SCREEN.fill("#00000000")
-            SCREEN.fill(("#ffffff"))
+            SCREEN.fill((0, 0, 0))
+        else:
+            SCREEN.fill((255, 255, 255))
         keys = pygame.key.get_pressed()
 
         player.update(keys)
